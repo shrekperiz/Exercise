@@ -1,0 +1,49 @@
+<div class="container container-table" ng-controller="CurrencyController">
+	<div class="row">
+		<div class="col-md-12">
+			<h4>Currency converter</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<label>Type in amount and select currency:</label>			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<form name="frmCurrency" novalidate>
+				<input type="text" class="form-control" name="baseCurrency" ng-model="baseCurrency" ng-change="calConvertedAmount()" valid-number required autofocus>	
+				<span class="red-alert" ng-show="frmCurrency.baseCurrency.$touched && frmCurrency.baseCurrency.$invalid">
+					Amount is required.
+				</span>
+			</form>
+		</div>
+		<div class="col-md-6">
+			<select name="baseCurrency" class="form-control" ng-model="selBaseCurrency" ng-options="currency as currency.code for currency in currencies" ng-change="getExchangeRate()" >
+			</select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<label>Converted amount:</label>
+		</div>		
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<input type="text" class="form-control" name="convCurrency" ng-model="convCurrency" disabled>
+		</div>
+		<div class="col-md-6">
+			<select name="convCurrency" class="form-control" ng-model="selConvCurrency" ng-options="currency as currency.code for currency in currencies" ng-change="getExchangeRate()" >
+			</select>
+		</div>
+	</div>
+	<div class="row top-buffer">
+		<span class="col-md-12 text-right"><a ng-click="showExchangeRate = !showExchangeRate">Disclaimer</a></span>
+	</div>
+	<div class="row" ng-show="showExchangeRate" >
+		<div class="col-md-12 text-left disclaimer">
+			<span>{{ 1 + ' ' + selBaseCurrency.code + ' = ' + exchangeRate + ' ' + selConvCurrency.code}}</span>
+			<a href="http://www.xe.com/" target="_blank">read more..</a>
+		</div>
+	</div>
+</div>

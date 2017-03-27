@@ -1,0 +1,53 @@
+ html, body, .container-table {
+    height: 100%;
+}
+.container-table {
+    display: table;
+    width: 340px;
+    height: 100%;
+    border: 1px solid;
+    padding-bottom: 10px;
+    background-color: #FC	FCFC;
+}
+
+select {
+	width: 80px;
+	height: 26px;
+}
+
+input {
+	width: 160px;
+	height: 26px;
+}
+
+label, a {
+	font-weight: bold;
+	font-size: 12px;
+}
+
+a {
+	text-decoration: underline;
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+.disclaimer {
+	font-size: 14px;
+	font-weight: normal;
+	color: blue;
+}
+
+.disclaimer > span {
+	padding-right: 5px;
+}
+
+.top-buffer {
+	margin-top: 10px;
+}
+
+.red-alert {
+	color: red;
+	font-size: 11px;
+}

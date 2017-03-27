@@ -1,0 +1,16 @@
+{
+	"currencies":[
+		{
+			"code":"CAD",
+			"country":"CA"
+		},
+		{
+			"code":"USD",
+			"country":"US"
+		},
+		{
+			"code":"EUR",
+			"country":"EU"
+		}
+	]
+}
